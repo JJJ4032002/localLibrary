@@ -13,7 +13,7 @@ const mongoose = require("mongoose");
 
 var app = express();
 // Set up default mongoose connection
-const mongoDB = "mongodb://127.0.0.1:27017/library";
+const mongoDB = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/library";
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Get the default connection
